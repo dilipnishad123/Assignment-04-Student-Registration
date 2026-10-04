@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Portal | Apex Institute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-wrapper">
+        <!-- Top Navigation -->
+        <nav class="nav-bar">
+            <a href="../../index.html">← Back to Master Hub</a>
+            <span>Assignment 4: Student Registration Form</span>
+        </nav>
+
+        <div class="form-card">
+            <!-- Header -->
+            <header class="form-header">
+                <span class="badge">Session 2026-2027</span>
+                <h1>Student Admission Registration</h1>
+                <p>Please fill in all mandatory details carefully to register your college enrollment.</p>
+            </header>
+
+            <!-- Registration Form -->
+            <form action="#" method="POST" class="registration-form" onsubmit="event.preventDefault(); alert('Registration Form submitted successfully!');">
+                
+                <!-- Section 1: Personal Information -->
+                <fieldset class="form-group-section">
+                    <legend>1. Personal Information</legend>
+                    <div class="two-column-grid">
+                        
+                        <!-- Full Name -->
+                        <div class="field-item">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. Dilip Nishad" required minlength="3">
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="field-item">
+                            <label for="studentEmail">Email Address <span class="required">*</span></label>
+                            <input type="email" id="studentEmail" name="studentEmail" placeholder="student@example.com" required>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="field-item">
+                            <label for="mobileNo">Mobile Number <span class="required">*</span></label>
+                            <input type="tel" id="mobileNo" name="mobileNo" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="field-item">
+                            <label for="accountPassword">Password <span class="required">*</span></label>
+                            <input type="password" id="accountPassword" name="accountPassword" placeholder="Minimum 8 characters" minlength="8" required>
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="field-item">
+                            <label for="dob">Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+
+                        <!-- Gender (Radios) -->
+                        <div class="field-item">
+                            <label>Gender <span class="required">*</span></label>
+                            <div class="radio-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male" required> Male
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female"> Female
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other"> Other
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <!-- Section 2: Academic & Geographical Details -->
+                <fieldset class="form-group-section">
+                    <legend>2. Academic & Location Details</legend>
+                    <div class="two-column-grid">
+                        
+                        <!-- Course Selection -->
+                        <div class="field-item">
+                            <label for="courseSelect">Applying For Course <span class="required">*</span></label>
+                            <select id="courseSelect" name="course" required>
+                                <option value="" disabled selected>-- Select Academic Program --</option>
+                                <option value="btech-cse">B.Tech - Computer Science & Engineering</option>
+                                <option value="btech-it">B.Tech - Information Technology</option>
+                                <option value="btech-ai">B.Tech - Artificial Intelligence & Data Science</option>
+                                <option value="bca">Bachelor of Computer Applications (BCA)</option>
+                                <option value="mca">Master of Computer Applications (MCA)</option>
+                            </select>
+                        </div>
+
+                        <!-- City Selection -->
+                        <div class="field-item">
+                            <label for="citySelect">City / Domicile <span class="required">*</span></label>
+                            <select id="citySelect" name="city" required>
+                                <option value="" disabled selected>-- Select Your City --</option>
+                                <option value="delhi">New Delhi / NCR</option>
+                                <option value="lucknow">Lucknow</option>
+                                <option value="kanpur">Kanpur</option>
+                                <option value="prayagraj">Prayagraj</option>
+                                <option value="varanasi">Varanasi</option>
+                                <option value="bhopal">Bhopal</option>
+                                <option value="other">Other City</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Hobbies (Checkboxes) -->
+                    <div class="field-item full-width-field" style="margin-top: 1rem;">
+                        <label>Extracurricular Hobbies & Interests</label>
+                        <div class="checkbox-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="hobbies" value="coding"> Web Development & Coding
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="hobbies" value="chess"> Chess & Gaming
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="hobbies" value="sports"> Sports & Athletics
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="hobbies" value="music"> Music & Arts
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="hobbies" value="reading"> Reading & Research
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Permanent Address (Textarea) -->
+                    <div class="field-item full-width-field" style="margin-top: 1.25rem;">
+                        <label for="fullAddress">Permanent Residential Address <span class="required">*</span></label>
+                        <textarea id="fullAddress" name="fullAddress" rows="3" placeholder="House/Flat No, Street, Landmark, Pin Code" required></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Form Controls (Submit & Reset) -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-submit">Submit Registration</button>
+                    <button type="reset" class="btn btn-reset">Reset All Fields</button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="form-footer">
+            <p>&copy; 2026 Apex Admissions Cell • Responsive Form Built with CSS Grid & Flexbox</p>
+        </footer>
+    </div>
+
+</body>
+</html>
